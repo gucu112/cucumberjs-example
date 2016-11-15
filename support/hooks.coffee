@@ -1,5 +1,6 @@
 module.exports = () ->
 
-    # Hooks goes here
+    @After (scenario) ->
+        browser.restart() if scenario.failed
     
     return

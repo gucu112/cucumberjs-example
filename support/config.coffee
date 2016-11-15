@@ -1,18 +1,18 @@
 module.exports = () ->
 
-    # Config goes here
-    browser.ignoreSynchronization = false # true disable waiting for Angular
-    @setDefaultTimeout 30 * 1000
+    # disable waiting for Angular
+    browser.ignoreSynchronization = true
 
-    # instance static variables (TODO)
+    @By = protractor.By
+    @Key = protractor.Key
+    @EC = protractor.ExpectedConditions
 
-    # World goes here (isolated scope for each scenario)
+    @setDefaultTimeout 60 * 1000
+
+    # isolated scope for each scenario
     @World = () ->
 
-        # instance variables
-        @url = '/login' # current location
-        @page = null # page object for current location
-        @components = [] # array of page objects representing components
+        @example = 'example world'
 
         return
 

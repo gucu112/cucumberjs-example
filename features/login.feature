@@ -1,4 +1,4 @@
-@login @modal
+@login @modal @example
 Feature: Login functionality
     In order to be logged into site as user
     As an anonymous guest
