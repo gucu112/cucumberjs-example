@@ -1,6 +1,6 @@
 exports.config = {
 
-  baseUrl: 'http://localhost:3000/',
+  baseUrl: 'http://localhost:3000',
   
   capabilities: {
     'browserName': 'chrome'
@@ -15,7 +15,7 @@ exports.config = {
       'steps/**/*.{js,coffee}'
     ],
     format: 'pretty', // or 'progress'
-    profile: false,
+    profile: 'default',
     tags: false
   },
 
@@ -23,9 +23,7 @@ exports.config = {
     'features/**/*.feature'
   ],
 
-  params: {
-    example: 'example param'
-  },
+  params: {},
 
   onPrepare: function () {
     var chai = require('chai');
@@ -38,6 +36,11 @@ exports.config = {
     // Initialize Chai plugins
     chai.use(require('chai-as-promised'));
     chai.use(require('chai-things'));
+
+    // Setup protractor variables
+    global.By = protractor.By
+    global.Key = protractor.Key
+    global.EC = protractor.ExpectedConditions
   }
 
 };
