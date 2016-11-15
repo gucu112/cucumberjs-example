@@ -57,10 +57,10 @@ Feature: Login functionality
         And I click "modal window close button" #???
 
     Scenario Outline: Login form should indicate correct errors
-        When I input user credentials using email <email> and password <password>
+        When I input user credentials using email "<email>" and password "<password>"
         And I click "submit button"
-        Then <errors> should be visible
+        Then "<errors>" should be visible
 
         Examples:
             | email | password | errors |
-            |       |          | nij    |
+            |       |          |        |
